@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DirectoryApp.Views.HomePage"
+             Title="HomePage"
+             Shell.NavBarIsVisible="False"
+             xmlns:local="clr-namespace:DirectoryApp.ViewModel"
+             xmlns:models="clr-namespace:DirectoryApp.Models">
+    
+    <ScrollView>
+        <StackLayout Margin="30">
+            <HorizontalStackLayout HorizontalOptions="End">
+                <Button x:Name="btnAdd" Text="+" FontSize="16" CornerRadius="15" HorizontalOptions="End" FontAttributes="Bold" Clicked="OnbtnAdd_Clicked"></Button>
+            </HorizontalStackLayout>
+            
+            <Grid ColumnDefinitions="50,*,*,*,*,*,*,*">
+                <Label Grid.Column="0" Text="ID"/>
+                <Label Grid.Column="1" Text="Last Name"/>
+                <Label Grid.Column="2" Text="First Name"/>
+                <Label Grid.Column="3" Text="School Program"/>
+                <Label Grid.Column="4" Text="Course"/>
+                <Label Grid.Column="5" Text="Email"/>
+                <Label Grid.Column="6" Text="Mobile Number"/>
+                <Label Grid.Column="7" Text="Type"/>
+            </Grid>
+
+            <CollectionView x:Name="ListContact" ItemsSource="{Binding ContactList}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="1" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="50, *, *, *, *, *, *, *">
+                            <Label Grid.Column="0" Text="{Binding ID}" />
+                            <Label Grid.Column="1" Text="{Binding LastName}" />
+                            <Label Grid.Column="2" Text="{Binding FirstName}" />
+                            <Label Grid.Column="3" Text="{Binding School}" />
+                            <Label Grid.Column="4" Text="{Binding Course}" />
+                            <Label Grid.Column="5" Text="{Binding Email}" />
+                            <Label Grid.Column="6" Text="{Binding Phone}" />
+                            <Label Grid.Column="7" Text="{Binding Type}" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

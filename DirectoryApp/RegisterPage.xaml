@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="DirectoryApp.RegisterPage"
+             Title="RegisterPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="White">
+
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="30,30,30,30">
+        <HorizontalStackLayout>
+
+            <VerticalStackLayout Margin="30,0,0,0">
+                <Label x:Name="lblStudentID" Text="Student ID" TextColor="Black" Padding="25,30,0,10"></Label>
+                <Label x:Name="lblFirstName" Text="First Name" TextColor="Black" Padding="25,35,0,10"></Label>
+                <Label x:Name="lblLastName" Text="Last Name" TextColor="Black" Padding="25,35,0,10"></Label>
+                <Label x:Name="lblEmail" Text="Email" TextColor="Black" Padding="25,35,0,10"></Label>
+                <Label x:Name="lblPassword" Text="Password" TextColor="Black" Padding="25,35,0,10"></Label>
+                <Label x:Name="lblConfirm" Text="Confirm" TextColor="Black" Padding="25,28,0,0"></Label>
+                <Label x:Name="lblPass" Text="Password" TextColor="Black" Padding="25,0,0,0"></Label>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout>
+                <Border Margin="30,15,15,15" Stroke="Gray">
+                    <Entry x:Name="txtStudentID" TextColor="Black" WidthRequest="200" MaxLength="5" ToolTipProperties.Text="Required. Numeric Values only">
+                        <Entry.Behaviors>
+                            <toolkit:MultiValidationBehavior x:Name="IDValidator" Flags="ValidateOnAttaching,ValidateOnValueChanged">
+                                <toolkit:TextValidationBehavior MinimumLength="5" MaximumLength="5" RegexPattern="^[0-9]*$" Flags="ValidateOnAttaching,ValidateOnValueChanged" toolkit:MultiValidationBehavior.Error="Student ID is invalid."/>
+                            </toolkit:MultiValidationBehavior>
+                        </Entry.Behaviors>
+                    </Entry>
+                </Border>
+                <Border Margin="30,5,15,15" Stroke="Gray">
+                    <Entry x:Name="txtFirstName" TextColor="Black" WidthRequest="200" ToolTipProperties.Text="Required">
+                        <Entry.Behaviors>
+                            <toolkit:MultiValidationBehavior x:Name="firstNameValidator" Flags="ValidateOnAttaching,ValidateOnValueChanged" >
+                                <toolkit:TextValidationBehavior MinimumLength="1" RegexPattern="^[a-zA-Z0-9\s]*$" Flags="ValidateOnAttaching,ValidateOnValueChanged" toolkit:MultiValidationBehavior.Error="First name field is invalid."/>
+                            </toolkit:MultiValidationBehavior>
+                        </Entry.Behaviors>
+                    </Entry>
+                </Border>
+                <Border Margin="30,5,15,15" Stroke="Gray">
+                    <Entry x:Name="txtLastName" TextColor="Black" WidthRequest="200" ToolTipProperties.Text="Required">
+                        <Entry.Behaviors>
+                            <toolkit:MultiValidationBehavior x:Name="lastNameValidator" Flags="ValidateOnAttaching,ValidateOnValueChanged" >
+                                <toolkit:TextValidationBehavior MinimumLength="1" RegexPattern="^[a-zA-Z0-9_]*$" Flags="ValidateOnAttaching,ValidateOnValueChanged" toolkit:MultiValidationBehavior.Error="Last name field is invalid."/>
+                            </toolkit:MultiValidationBehavior>
+                        </Entry.Behaviors>
+                    </Entry>
+                </Border>
+                <Border Margin="30,5,15,15"  Stroke="Gray">
+                    <Entry x:Name="txtEmail" TextColor="Black" WidthRequest="200" ToolTipProperties.Text="Required">
+                        <Entry.Behaviors>
+                            <toolkit:MultiValidationBehavior x:Name="emailValidator" Flags="ValidateOnAttaching,ValidateOnValueChanged" >
+                                <toolkit:EmailValidationBehavior MinimumLength="1" Flags="ValidateOnAttaching,ValidateOnValueChanged" toolkit:MultiValidationBehavior.Error="Email is invalid."/>
+                            </toolkit:MultiValidationBehavior>
+                        </Entry.Behaviors>
+                    </Entry>
+                </Border>
+                <Border Margin="30,5,15,15" Stroke="Gray">
+                    <Entry x:Name="txtPassword" TextColor="Black" WidthRequest="200" IsPassword="True" ToolTipProperties.Text="Required. Minimum of 8 characters.">
+                        <Entry.Behaviors>
+                            <toolkit:MultiValidationBehavior x:Name="passwordValidator">
+                                <toolkit:TextValidationBehavior Flags="ValidateOnAttaching,ValidateOnValueChanged" />
+                                <toolkit:TextValidationBehavior Flags="ValidateOnAttaching,ValidateOnValueChanged" MinimumLength="8" toolkit:MultiValidationBehavior.Error="Password is required with a minimum of 8 characters." />
+                            </toolkit:MultiValidationBehavior>
+                        </Entry.Behaviors>
+                    </Entry>
+                </Border>
+                <Border Margin="30,5,15,15" Stroke="Gray">
+                    <Entry x:Name="txtConfirmPass" TextColor="Black" WidthRequest="200" IsPassword="True"></Entry>
+                </Border>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout>
+                <Label x:Name="lblGender" Text="Gender" TextColor="Black" Padding="25,30,0,10"></Label>
+                <Label x:Name="lblBirthday" Text="Birth Date" TextColor="Black" Padding="25,35,0,10"></Label>
+                <Label x:Name="lblMobileNo" Text="Mobile No." TextColor="Black" Padding="25,35,0,10"></Label>
+                <Label x:Name="lblCity" Text="City" TextColor="Black" Padding="25,35,0,10"></Label>
+                <Label x:Name="lblSchoolProgram" Text="School Program" TextColor="Black" Padding="25,35,0,10"></Label>
+                <Label x:Name="lblCourse" Text="Course" TextColor="Black" Padding="25,35,0,10"></Label>
+                <Label x:Name="lblYearLevel" Text="Year Level" TextColor="Black" Padding="25,35,0,10"></Label>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout  Margin="0,0,0,30">
+
+                <HorizontalStackLayout Margin="30,15,15,15">
+                    <RadioButton x:Name="rdoMale" TextColor="Black" Content="Male" GroupName="Gender" IsChecked="False" ></RadioButton>
+                    <RadioButton x:Name="rdoFemale" TextColor="Black" WidthRequest="200" Content="Female" GroupName="Gender" IsChecked="False"></RadioButton>
+                </HorizontalStackLayout>
+
+                <DatePicker x:Name="dateBirthday" Margin="30,8,15,15" MinimumDate="01/01/1960" MaximumDate="12/31/2023" WidthRequest="200" HorizontalOptions="Start"></DatePicker>
+                <Border Margin="30,5,15,15" HorizontalOptions="Start" Stroke="Gray">
+                    <Entry x:Name="txtMobileNo" TextColor="Black" WidthRequest="200" HorizontalOptions="Start" ToolTipProperties.Text="Number input only">
+                        <Entry.Behaviors>
+                            <toolkit:MultiValidationBehavior x:Name="mobileValidator" Flags="ValidateOnValueChanged">
+                                <toolkit:TextValidationBehavior RegexPattern="^[0-9]*$" Flags="ValidateOnValueChanged" toolkit:MultiValidationBehavior.Error="Mobile no is invalid."/>
+                            </toolkit:MultiValidationBehavior>
+                        </Entry.Behaviors>
+                    </Entry>
+                </Border>
+                <Border  Stroke="Gray" Margin="30,5,15,15" HorizontalOptions="Start">
+                    <Entry x:Name="txtCity" TextColor="Black" WidthRequest="200" HorizontalOptions="Start"></Entry>
+                </Border>
+
+                <StackLayout Margin="-33,6,15,15">
+                    <Picker x:Name="pkrSchoolName" TextColor="Black"  BackgroundColor="White" HorizontalOptions="FillAndExpand" WidthRequest="200"  FontAutoScalingEnabled="True">
+                    </Picker>
+                </StackLayout>
+                <StackLayout Margin="-33,1,15,15">
+                    <Picker x:Name="pkrCourseName" TextColor="Black" BackgroundColor="White" HorizontalOptions="FillAndExpand" WidthRequest="200" FontAutoScalingEnabled="True" SelectedIndex="0"></Picker>
+                </StackLayout>
+                <StackLayout Margin="-33,1,15,15">
+                    <Picker x:Name="pkrYear" TextColor="Black" BackgroundColor="White" HorizontalOptions="FillAndExpand" WidthRequest="200" FontAutoScalingEnabled="True">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>-SELECT-</x:String>
+                                <x:String>1</x:String>
+                                <x:String>2</x:String>
+                                <x:String>3</x:String>
+                                <x:String>4</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </StackLayout>
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="30,-10,30,5">
+            <Button Text="Submit" x:Name="btnSubmit" BackgroundColor="DodgerBlue" TextColor="White" WidthRequest="150" CornerRadius="10" FontAttributes="Bold" Clicked="OnSubmitClicked" Margin="50,0,20,0"></Button>
+            <Button Text="Reset" x:Name="btnReset" BackgroundColor="Grey" TextColor="White" WidthRequest="150" CornerRadius="10" FontAttributes="Bold" Clicked="OnResetClicked" Margin="20,0,50,0"></Button>
+        </HorizontalStackLayout>
+
+
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit ="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="DirectoryApp.Views.StudentFormResults"
+             CanBeDismissedByTappingOutsideOfPopup="False">
+
+
+    <StackLayout  HorizontalOptions="Center" VerticalOptions="Center" Margin="10,10,10,0" WidthRequest="650" HeightRequest="400">
+        <Label Margin="30,10,0,0" Text="STUDENT INFORMATION" FontSize="Title" VerticalOptions="Center" HorizontalOptions="Center" />
+        <HorizontalStackLayout HorizontalOptions="Start">
+            <VerticalStackLayout Margin="10,10,0,0">
+                <Label x:Name="lblStudent" Text="Student ID:" TextColor="Black" Padding="25,20,0,10" FontAttributes="Bold"></Label>
+                <Label x:Name="lblFirstName" Text="First Name" TextColor="Black" Padding="25,5,0,10" FontAttributes="Bold"></Label>
+                <Label x:Name="lblLastName" Text="Last Name:" TextColor="Black" Padding="25,5,0,10" FontAttributes="Bold"></Label>
+                <Label x:Name="lblEmail" Text="Email:" TextColor="Black" Padding="25,5,0,10" FontAttributes="Bold"></Label>
+                <Label x:Name="lblPassword" Text="Password:" TextColor="Black" Padding="25,5,0,10" FontAttributes="Bold"></Label>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout>
+                <Label x:Name="lblStudentIDInput" Text="{Binding student.studentID}" TextColor="Black" Padding="25,30,0,10"></Label>
+                <Label x:Name="lblFirstNameInput" Text="{Binding student.studentFirstName}" TextColor="Black" Padding="25,5,0,10"></Label>
+                <Label x:Name="lblLastNameInput" Text="{Binding student.studentLastName}" TextColor="Black" Padding="25,5,0,10"></Label>
+                <Label x:Name="lblEmailInput" Text="{Binding student.studentEmail}" TextColor="Black" Padding="25,5,0,10"></Label>
+                <Label x:Name="lblPasswordInput" Text="{Binding student.studentPassword}" TextColor="Black" Padding="25,5,0,10"></Label>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Margin="10,10,0,0">
+                <Label x:Name="lblGender" Text="Gender:" TextColor="Black" Padding="25,20,0,10" FontAttributes="Bold"></Label>
+                <Label x:Name="lblBirthday" Text="Birthday:" TextColor="Black" Padding="25,5,0,10" FontAttributes="Bold"></Label>
+                <Label x:Name="lblMobileNo" Text="Mobile No:" TextColor="Black" Padding="25,5,0,10" FontAttributes="Bold"></Label>
+                <Label x:Name="lblCity" Text="City:" TextColor="Black" Padding="25,5,0,10" FontAttributes="Bold"></Label>
+                <Label x:Name="lblSchool" Text="School Program:" TextColor="Black" Padding="25,5,0,10" FontAttributes="Bold"></Label>
+                <Label x:Name="lblCourse" Text="Course:" TextColor="Black" Padding="25,5,0,10" FontAttributes="Bold"></Label>
+                <Label x:Name="lblYear" Text="Year Level:" TextColor="Black" Padding="25,5,0,10" FontAttributes="Bold"></Label>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Margin="0,0,5,10">
+                <Label x:Name="lblGenderInput" Text="{Binding student.studentGender}" TextColor="Black" Padding="25,30,0,10"></Label>
+                <Label x:Name="lblBirthdayInput" Text="{Binding student.studentBirthday}" TextColor="Black" Padding="25,5,0,10"></Label>
+                <Label x:Name="lblMobileNoInput" Text="{Binding student.studentMobile}" TextColor="Black" Padding="25,5,0,10"></Label>
+                <Label x:Name="lblCityInput" Text="{Binding student.studentCity}" TextColor="Black" Padding="25,5,0,10"></Label>
+                <Label x:Name="lblSchoolInput" Text="{Binding student.schoolName}" TextColor="Black" Padding="25,5,0,10"></Label>
+                <Label x:Name="lblCourseInput" Text="{Binding student.courseName}" TextColor="Black" Padding="25,5,0,10"></Label>
+                <Label x:Name="lblYearInput" Text="{Binding student.yearLevel}" TextColor="Black" Padding="25,5,0,10"></Label>
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
+        <Button Text="Close" Clicked="OnCloseButtonClicked" HorizontalOptions="CenterAndExpand" WidthRequest="150" CornerRadius="10" FontAttributes="Bold" Margin="0,15,0,10" BackgroundColor="DodgerBlue"/>
+    </StackLayout>
+</toolkit:Popup>

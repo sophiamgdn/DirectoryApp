@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DirectoryApp.MainPage"
+			 Shell.NavBarIsVisible="False"
+             BackgroundColor="White">
+
+    <VerticalStackLayout Spacing="25" Padding="30,180,30,30" HorizontalOptions="Center" >
+        <StackLayout Orientation="Vertical" Spacing="8" HorizontalOptions="Start" >
+            <Label x:Name="lblUsername" Text="Student ID" TextColor="Black" VerticalOptions="Start"></Label>
+            <Border Stroke="Gray">
+                <Entry  WidthRequest="500" x:Name="txtID" Placeholder="Enter Student ID" PlaceholderColor="Gray" TextColor="Black" BackgroundColor="White" Keyboard="Email"></Entry>
+            </Border>
+            <Label x:Name="lblPassword" Text="Password" TextColor="Black"></Label>
+            <Border Stroke="Gray">
+                <Entry WidthRequest="500" x:Name="txtPasswordFld" Placeholder="Enter password" PlaceholderColor="Gray" IsPassword="True" BackgroundColor="White" TextColor="Black" ></Entry>
+            </Border>
+            <Button x:Name="btnLogin" CornerRadius="20" Text="Log in" WidthRequest="150"  Margin="0,8,0,0" Clicked="OnLoginClick" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold"/>
+            <Label x:Name="lblNewUser" Text="New User? Register Here" TextColor="DodgerBlue" TextDecorations="Underline" HorizontalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLabelTapped"></TapGestureRecognizer>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label x:Name="lblMessage" TextColor="Black" HorizontalOptions="Center" Margin="0,8,0,0"></Label>
+        </StackLayout>
+    </VerticalStackLayout>
+
+</ContentPage>

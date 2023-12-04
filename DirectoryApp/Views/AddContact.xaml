@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DirectoryApp.Views.AddContact"
+             Title="AddContact"
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasBackButton="False">
+   
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="0,-50,0,0"> 
+        <HorizontalStackLayout>
+            <VerticalStackLayout>
+                <StackLayout Orientation="Horizontal" Margin="20">
+                    <Label Text="Type" VerticalOptions="Center" Margin="0,-10,10,0" FontAttributes="Bold"/>
+                    <RadioButton x:Name="rdoFaculty"  Margin="30,0,0,0"/>
+                    <Label Text="Faculty" VerticalOptions="Center" Margin="-10,-5,10,0" />
+                    <RadioButton x:Name="rdoStudent" Margin="10,0,0,0" />
+                    <Label Text="Student" VerticalOptions="Center" Margin="-10,-5,0,0"/>
+                </StackLayout>
+                <HorizontalStackLayout>
+                    <Label Text="ID" FontAttributes="Bold" Margin="20,10,60,0"></Label>
+                    <Border Stroke="Black" WidthRequest="200" Margin="60,0,0,0">
+                        <Entry x:Name="txtID" ToolTipProperties.Text="Required. Numeric values only."></Entry>
+                    </Border>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Margin="0,10,0,0">
+                    <Label Text="First Name" FontAttributes="Bold" Margin="20,10,60,0"></Label>
+                    <Border Stroke="Black" WidthRequest="200" Margin="2,0,0,0">
+                        <Entry x:Name="txtFirstName" ToolTipProperties.Text="Required."></Entry>
+                    </Border>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Margin="0,10,0,0">
+                    <Label Text="Last Name" FontAttributes="Bold" Margin="20,10,60,0"></Label>
+                    <Border Stroke="Black" WidthRequest="200" Margin="4,0,0,0">
+                        <Entry x:Name="txtLastName" ToolTipProperties.Text="Required."></Entry>
+                    </Border>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Margin="0,10,0,0">
+                    <Label Text="Email" FontAttributes="Bold" Margin="20,10,60,0"></Label>
+                    <Border Stroke="Black" WidthRequest="200" Margin="37,0,0,0">
+                        <Entry x:Name="txtEmail" ToolTipProperties.Text="Required."></Entry>
+                    </Border>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+            <VerticalStackLayout>
+                <HorizontalStackLayout Margin="0,80,0,0">
+                    <Label Text="Mobile No." FontAttributes="Bold" Margin="100,10,60,0"></Label>
+                    <Border Stroke="Black" WidthRequest="200" Margin="20,0,0,0">
+                        <Entry x:Name="txtMobile" ToolTipProperties.Text="Number input only"></Entry>
+                    </Border>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Margin="0,10,0,0">
+                    <Label Text="School" FontAttributes="Bold" Margin="100,10,60,0"></Label>
+                    <Border Stroke="Black" WidthRequest="200" Margin="50,0,0,0">
+                        <Picker x:Name="pkrSchoolName" TextColor="Black"  BackgroundColor="White" WidthRequest="200" ></Picker>
+                    </Border>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Margin="0,10,0,0">
+                    <Label Text="Course" FontAttributes="Bold" Margin="100,10,60,0"></Label>
+                    <Border Stroke="Black" WidthRequest="200" Margin="50,0,0,0">
+                        <Picker x:Name="pkrCourse" TextColor="Black"  BackgroundColor="White" WidthRequest="200" ></Picker>
+                    </Border>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center" Margin="0,30,0,0">
+            <Button Text="Submit" x:Name="OnbtnSubmit" BackgroundColor="DodgerBlue" TextColor="White" WidthRequest="150" CornerRadius="10" FontAttributes="Bold" Clicked="OnSubmitClicked" Margin="50,0,20,0"></Button>
+            <Button Text="Reset" x:Name="OnbtnReset" BackgroundColor="Grey" TextColor="White" WidthRequest="150" CornerRadius="10" FontAttributes="Bold" Clicked="OnResetClicked" Margin="20,0,50,0"></Button>
+        </HorizontalStackLayout>
+       
+    </StackLayout>
+    
+
+
+
+
+
+</ContentPage>
